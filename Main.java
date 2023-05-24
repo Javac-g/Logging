@@ -22,7 +22,7 @@ public class Main {
         logger.info(messageSupplier);
         logger.log(Level.INFO,message);
         logger.logp(Level.INFO,"Class: Main","Method: main",message);
-        logger.logrb(Level.INFO,"Class: Main","Method: main",resourceBundle,"id");
+        logger.logrb(Level.INFO,"Class: Main","Method: main",resourceBundle,"message.id");
 
     }
 }
