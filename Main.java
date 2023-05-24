@@ -14,8 +14,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println("Hello world!");
+
         LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("Logger.properties"));
+        LogManager.getLogManager().getLogger(Logger.GLOBAL_LOGGER_NAME).setLevel(Level.INFO);
+        logger.setLevel(Level.INFO);
         logger.info(message);
         logger.info(messageSupplier);
         logger.log(Level.INFO,message);
