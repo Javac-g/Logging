@@ -34,9 +34,20 @@ public class User {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 11 * hash  * Objects.hashCode(this.id);
-        hash = 11 * hash * Objects.hashCode(this.age);
-        hash = 11 * hash * Objects.hashCode(this.name);
+        hash = 11 * hash + Objects.hashCode(this.id);
+        hash = 11 * hash + Objects.hashCode(this.age);
+        hash = 11 * hash + Objects.hashCode(this.name);
         return hash;
+    }
+    @Override
+    public boolean equals(Object ob){
+        if (this == ob){
+            return true;
+        }
+        if (ob == null || getClass() != ob.getClass()){
+            return false;
+        }
+        User user = (User)ob;
+        return Objects.equals(name,user.getName()) && Objects.equals(age,user.getAge()) && Objects.equals(id,user.getId());
     }
 }
